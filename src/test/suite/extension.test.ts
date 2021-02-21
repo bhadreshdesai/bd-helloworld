@@ -9,7 +9,20 @@ suite('Extension Test Suite', () => {
 	vscode.window.showInformationMessage('Start all tests.');
 
 	test('Sample test', () => {
+		console.log("Sample test running...")
 		assert.strictEqual(-1, [1, 2, 3].indexOf(5));
 		assert.strictEqual(-1, [1, 2, 3].indexOf(0));
 	});
+
+	test('Extension available', () => {
+		console.log("Extension available test running ...")
+		vscode.extensions.all.forEach(ext=>{
+			console.log(ext.id)
+		})
+		/*
+		var myExtension = vscode.extensions.getExtension("bhadreshdesai.bd-helloworld")
+		console.log(myExtension)
+		assert.strictEqual(myExtension !== undefined, true)
+		*/
+	})
 });
